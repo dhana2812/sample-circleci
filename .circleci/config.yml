@@ -28,6 +28,8 @@ jobs:
       - docker/build:
           image: flask-app 
           tag: latest
+      - run: |
+          docker images
 
 workflows:
   say-hello-workflow:
