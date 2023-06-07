@@ -17,32 +17,6 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-  say-hello-welcome:
-    # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/configuration-reference/#executor-job
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/configuration-reference/#steps
-    steps:
-      - checkout
-      - run:
-          name: "Say hello welcome"
-          command: "echo Hello, $NAME!"
-  say-hello-Dhana:
-    # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/configuration-reference/#executor-job
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/configuration-reference/#steps
-    steps:
-      - checkout
-      - run:
-          name: "Say hello Dhana"
-          command: "echo Hello, Dhana!"
-# Orchestrate jobs using workflows
-# See: https://circleci.com/docs/configuration-reference/#workflows
   docker-build:
     docker:
       # replace with your preferred image
@@ -60,3 +34,4 @@ workflows:
       - say-hello
       - say-hello-Dhana
       - say-hello-welcome
+      - docker-build
