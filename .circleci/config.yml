@@ -34,7 +34,7 @@ jobs:
           name: Install trivy
           command: |
             sudo curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin
-       - run:
+      - run:
           name: Scan the local image with trivy
           command: sudo trivy image flask-app
           
