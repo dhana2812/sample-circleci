@@ -43,6 +43,17 @@ jobs:
           command: "echo Hello, Dhana!"
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
+  docker-build:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - setup_remote_docker
+      - checkout
+      - docker/build:
+          image: flask-app 
+          tag: latest
+
 workflows:
   say-hello-workflow:
     jobs:
